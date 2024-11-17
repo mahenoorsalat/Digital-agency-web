@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#cursor {
+    z-index: 999;
+    position: fixed;
+    background: #000;
+    pointer-events: none;
+    transition: background 0.5s;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    height: 10px;
+    width: 12px;
+}
+
+#main {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#home {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+#nav {
+    padding: 1px 50px;
+    width: 100%;
+}
+#nav img {
+    width: 100px;
+}
+
+#right {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  #right p {
+    padding: 30px 0;
+    display: block;
+  }
+  
+  #right .menu {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 107px;
+    z-index: 1000;
+    position: relative;
+  }
+  
+  .menu span {
+    background: black;
+    height: 2px;
+    width: 100%;
+    margin: 5px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .menu span:nth-child(1).rotate {
+    transform: rotate(50deg);
+  }
+  
+  .menu span:nth-child(2).rotate {
+    display: none;
+  }
+  
+  .menu span:nth-child(3).rotate {
+    transform: rotate(130deg);
+  }
+  
+  #right .overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #right .overlay .column {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 129px;
+}
+  
+  #right .overlay .socialmedia ul,
+  #right .overlay .sections ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #right .overlay .socialmedia ul li,
+  #right .overlay .sections ul li {
+    font-size: 24px;
+    padding: 10px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  #right .overlay .socialmedia ul li::before,
+  #right .overlay .sections ul li::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #000;
+    bottom: -5px; 
+    left: 0;
+    transform-origin: left;
+    transition: width 0.2s ease-in;
+  }
+  
+  #right .overlay .socialmedia ul li:hover::before,
+  #right .overlay .sections ul li:hover::before {
+    width: 100%;
+  }
+  
+  #right .overlay .column2 {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #right .overlay .column2 button {
+    font-size: 16px;
+    color: white;
+    background: #333;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #right .overlay .column2 button:hover {
+    background-color: #555;
+  }
+  
+  #hero {
+    margin: 52px 200px;
+}
+
+#hero h1 {
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+    line-height: 1.2;
+    font-size: 6vw;
+    font-weight: 300;
+}
+
+#hero video {
+    width: 128px;
+    height: 107px;
+    border-radius: 30px;
+}
+
+#hero h1 span {
+    color: #000;
+    font-weight: 200;
+}
+
+#second video {
+    width: 100%;
+}
+
+#third {
+    margin: 200px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.informationAbout {
+    padding: 26px 130px;
+}
+
+.informationAbout p {
+    font-size: 2vw;
+    line-height: 1.2;
+    margin-bottom: 56px;
+}
+
+.btn {
+    border: 2px solid black;
+    font-size: 19px;
+    padding: 42px 82px;
+    background: transparent;
+    border-radius: 70px;
+    transition: background 0.3s ease, color 0.3s ease;
+    /* Smooth transition for both background and color */
+}
+
+.btn a {
+    
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Smooth transition for color */
+}
+
+.btn:hover {
+    color: white;
+    background: #000;
+}
+
+.btn:hover a {
+    color: white !important;
+}
+
+/* .project video:hover #cursor {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    background: white;
+    color: black;
+}
+
+.project video:hover #cursor::before {
+    position: absolute;
+    content: "Explore";
+    background: black;
+    opacity: 0.9;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+} */
+
+#four h1 video {
+    height: 107px;
+    border-radius: 25%;
+}
+
+.project {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#four:hover #cursor {
+    background: white;
+}
+
+#four {
+    background: #000;
+    border-radius: 16px;
+    color: white;
+}
+
+#four h1 img {
+    width: 128px;
+    height: 107px;
+    border-radius: 30px;
+}
+
+#four>h1 {
+    padding: 53px 45px;
+    font-weight: 300;
+    font-size: 7vw;
+}
+
+#four>h1 span {
+    margin-left: 207px;
+}
+
+.project {
+    display: flex;
+}
+
+.project video {
+    border-radius: 16px;
+    margin: 45px;
+    height: 784px;
+}
+
+.projects {
+    margin: 0px 100px;
+    justify-content: space-between;
+    display: flex;
+    padding: 45px 0px;
+}
+
+
+.prrrr1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.prrrr2 {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+#featured {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vw 15vw;
+}
+
+.fheading>h1 {
+    line-height: 1;
+    font-size: 4vw;
+    font-weight: 400;
+}
+
+.fheading>h1:nth-child(2) {
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+}
+
+
+
+#cursorBgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 300px;
+    border-radius: 50%;
+    pointer-events: none;
+    visibility: hidden;
+
+}
+
+#five {
+    margin: 200px 125px;
+    justify-content: space-between;
+    display: flex;
+}
+
+#five video {
+    height: 500px;
+}
+
+
+
+.marquee {
+    font-style: italic;
+    position: relative;
+    padding: 30px 0;
+    font-weight: 200;
+    font-size: 7vw;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.marquee_inner {
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+
+}
+
+.marquee_part {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 4px;
+}
+
+.arrow img {
+    width: 60px;
+    height: 80px;
+    margin: 0 1em;
+    transform: rotate(180deg);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.arrow.active {
+    transform: rotate(-180deg);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#six {
+
+    color: #fff;
+    padding: 100px 0px;
+    background: url(giphy/contact.gif)no-repeat center center/cover;
+    width: 100%;
+    height: 100%;
+    margin: 200px 0px;
+}
+
+#six h1 {
+    font-size: 6vw;
+    font-weight: 500;
+    font-style: italic;
+    text-align: center;
+    align-items: center;
+}
+
+#six h1 span {
+    border-radius: 49%;
+    border: 2px solid white;
+    padding: 12px 34px;
+    transition: background 2s ease-in;
+}
+
+@keyframes glitch-bg {
+    0% {
+        opacity: 1;
+        filter: none;
+        transform: translate(0);
+    }
+
+    20% {
+        opacity: 0.8;
+        filter: hue-rotate(15deg) contrast(1.1);
+        transform: translate(-3px, 3px);
+    }
+
+    40% {
+        opacity: 0.7;
+        filter: hue-rotate(-15deg) contrast(0.9);
+        transform: translate(3px, -3px);
+    }
+
+    60% {
+        opacity: 0.9;
+        filter: hue-rotate(10deg) contrast(1.2);
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        opacity: 0.85;
+        filter: hue-rotate(-10deg) contrast(1.1);
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: none;
+        transform: translate(0);
+    }
+}
+
+#six.glitch-active {
+    animation: glitch-bg 0.5s infinite;
+}
+
+#six h1 span:hover {
+    background: #000;
+}
+
+.flex p {
+    position: relative;
+    color: white;
+    margin: 0;
+}
+
+.flex p::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    bottom: -5px;
+    left: 0;
+    transform-origin: left;
+    transition: width 0.2s ease-in;
+}
+
+
+.flex p:hover::before {
+    width: 100%;
+}
+
+.flex {
+    margin: 150px 40px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    color: white;
+    background: none;
+    border-radius: 49%;
+    border: 2px solid white;
+    padding: 12px 34px;
+    transition: background 2s ease-in;
+}
+
+button:hover {
+    background: #000;
+
+}
+
+#seven {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    width: 600px;
+    height: auto;
+    position: relative;
+}
+
+.container i {
+    opacity: 0.9;
+    position: absolute;
+    font-size: 61px;
+    color: black;
+    background-color: white;
+    border-radius: 100%;
+    padding: 33px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.container:hover i {
+    background-color: red;
+    /* Change background color on hover */
+    color: white;
+    /* Change icon color on hover */
+}
+@media (min-width:768px) and (max-width: 1023px) {
+    #hero h1 {
+        margin-bottom: 78px;
+    }
+    .informationAbout {
+        padding: 26px 25px;
+    }
+    .projects{
+        margin: 0px;
+    }
+    #right .overlay {
+        width: 75%;
+    }
+}
+@media (min-width:480px) and (max-width: 768px) {
+
+
+    .projects .project {
+        flex: 1 1 100%;
+    }
+
+    #six button {
+        width: 100%;
+    }
+    #hero {
+        margin: 52px 50px;
+    }
+
+    #hero video {
+        width: 73px;
+        height: 68px;
+        border-radius: 203px;
+    }
+    br{
+        display: none;
+    }
+
+    #third {
+        display: flex;
+        flex-direction: column;
+        margin: 200px 25px;
+    }
+    .btn {
+        border: 2px solid black;
+        font-size: 16px;
+        padding: 9px 21px;
+        background: transparent;
+        border-radius: 70px;
+        transition: background 0.3s ease, color 0.3s ease;
+        display: inline-block;
+    }
+    .projects {
+        margin: 0px 31px;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+    }
+    #five {
+        margin: 200px 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    #five video {
+        height: 455px;
+    }
+    #right .overlay {
+        width: 100%;
+    }
+}
+
+/* For Mobile */
+@media screen and (max-width: 480px) {
+    #right .overlay {
+        width: 100%;
+    }
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .projects .project {
+        flex: 1 1 100%;
+    }
+
+    #six button {
+        width: 100%;
+    }
+    #hero {
+        margin: 52px 50px;
+    }
+
+    #hero video {
+        width: 73px;
+        height: 68px;
+        border-radius: 203px;
+    }
+    br{
+        display: none;
+    }
+
+    #third {
+        display: flex;
+        flex-direction: column;
+        margin: 200px 25px;
+    }
+    .btn {
+        border: 2px solid black;
+        font-size: 16px;
+        padding: 9px 21px;
+        background: transparent;
+        border-radius: 70px;
+        transition: background 0.3s ease, color 0.3s ease;
+        display: inline-block;
+    }
+    .projects {
+        margin: 0px 31px;
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+    }
+    #five {
+        margin: 200px 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    #five video {
+        height: 455px;
+    }
+
+}
