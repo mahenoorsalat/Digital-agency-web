@@ -630,6 +630,28 @@ button:hover {
 
 /* For Mobile */
 @media screen and (max-width: 480px) {
+    .informationAbout{
+        padding: 0px;
+    }
+    #right .overlay .column2 button {
+        font-size: 9px;
+        color: white;
+        background: #333;
+        border-radius: 20px;
+        border: none;
+        padding: 10px 49px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    #right .overlay .column{
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+    #right .overlay .socialmedia ul li, #right .overlay .sections ul li {
+        font-size: 13px;
+        padding: 10px;
+    }
     #right .overlay {
         width: 100%;
     }
@@ -664,12 +686,18 @@ button:hover {
     }
     .btn {
         border: 2px solid black;
-        font-size: 16px;
+        font-size: 9px;
         padding: 9px 21px;
         background: transparent;
         border-radius: 70px;
         transition: background 0.3s ease, color 0.3s ease;
         display: inline-block;
+    }
+    #four>h1{
+        padding: 0px;
+    }
+    .footer{
+        font-size: 12px;
     }
     .projects {
         margin: 0px 31px;
